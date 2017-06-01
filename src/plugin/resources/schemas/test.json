@@ -1,0 +1,9 @@
+{
+    "properties": {
+        "smaller": {
+            "type": "number",
+            "maximum": 5
+        },
+        "larger": { "type": "number" }
+    }
+}

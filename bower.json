@@ -1,0 +1,25 @@
+{
+    "name": "kbase-ui-plugin-tester",
+    "description": "A plugin for testing the ui",
+    "keywords": [
+        "kbase", "widget"
+    ],
+    "author": [
+        "eapearson@lbl.gov"
+    ],
+    "moduleType": "kbase-ui-plugin",
+    "main": "src/plugin/config.yml",
+    "ignore": [
+        ".gitignore"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/kbase/kbase-ui-plugin-tester"
+    },
+    "dependencies": {
+        "bluebird": "^3.4.7",
+        "bootstrap": "^3.3.0"
+    },
+    "devDependencies": {},
+    "license": "SEE LICENSE IN LICENSE"
+}

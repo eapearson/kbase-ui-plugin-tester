@@ -1,0 +1,48 @@
+## Plugin Config File
+---
+package:
+    author: Erik Pearson
+    name: tester
+    description: A plugin for testing features of the ui, services, etc.
+    date: May 28, 2017
+    version: 0.1.0
+source:
+install:
+    widgets:
+        -
+            module: panel
+            id: kb_tester_panel
+            type: factory
+        -
+            module: notifications
+            id: kb_tester_notifications
+            type: factory
+        -
+            module: schema
+            id: kb_tester_schema
+            type: factory
+    ko-components:
+    routes:
+        -
+            path: ['tester']
+            widget: kb_tester_panel
+            authorization: true
+        -
+            path: ['tester', 'notifications']
+            widget: kb_tester_notifications
+            authorization: true
+        -
+            path: ['tester', 'schema']
+            widget: kb_tester_schema
+            authorization: true
+    menu:
+        -
+            name: tester
+            definition:
+                path: tester
+                label: Tester
+                icon: fire-extinguisher
+    schema:
+        - 
+            name: tester/test1
+            path: schemas/test.json
