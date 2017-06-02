@@ -41,6 +41,17 @@ define([
                 div({
                     class: 'form-group'
                 }, [
+                    label('ID'),
+                    input({
+                        dataBind: {
+                            textInput: 'id'
+                        },
+                        class: 'form-control'
+                    })
+                ]),
+                div({
+                    class: 'form-group'
+                }, [
                     label('Message'),
                     input({
                         dataBind: {
@@ -60,6 +71,7 @@ define([
                         class: 'form-control'
                     })
                 ]),
+
                 div([
                     button({
                         dataBind: {
@@ -76,6 +88,7 @@ define([
         var runtime = params.runtime;
         var type = ko.observable();
         var message = ko.observable();
+        var id = ko.observable();
         var autodismiss = ko.observable();
 
         var typeList = [{
@@ -97,14 +110,22 @@ define([
         ];
 
         function doSend() {
+            var autodismissValue;
+            if (autodismiss()) {
+                autodismissValue = parseInt(autodismiss());
+            } else {
+                autodismissValue = null;
+            }
             runtime.send('notification', 'notify', {
                 type: type(),
+                id: id(),
                 message: message(),
-                autodismiss: parseInt(autodismiss())
+                autodismiss: autodismissValue
             });
         }
         return {
             type: type,
+            id: id,
             typeList: typeList,
             message: message,
             autodismiss: autodismiss,
