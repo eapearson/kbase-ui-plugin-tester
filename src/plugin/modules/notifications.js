@@ -97,11 +97,11 @@ define([
             },
             {
                 value: 'info',
-                label: 'Info'
+                label: 'Informational'
             },
             {
-                value: 'warn',
-                label: 'Warn'
+                value: 'warning',
+                label: 'Warning'
             },
             {
                 value: 'error',
